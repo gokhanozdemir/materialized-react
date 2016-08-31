@@ -21,19 +21,22 @@ module.exports = {
       template: 'src/index.ejs',
       minify: {
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       },
-      inject: true
+      inject: true,
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
-      __DEV__: true
+      __DEV__: true,
     }),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
   ],
   module: {
     preLoaders: [
-      {test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/}
-    ]
-  }
-}
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'eslint-loader' },
+    ],
+    loaders: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel'] },
+    ],
+  },
+};
