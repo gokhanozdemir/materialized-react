@@ -24,6 +24,12 @@
   },
   "homepage": "https://github.com/barancezayirli/materialized-react#readme",
   "devDependencies": {
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.0",
+    "eslint-plugin-react": "^6.2.0",
     "html-webpack-plugin": "^2.22.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"

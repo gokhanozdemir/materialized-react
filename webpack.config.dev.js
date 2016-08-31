@@ -11,6 +11,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  noInfo: true,
   devServer: {
     port: 3000,
   },
@@ -23,6 +24,16 @@ module.exports = {
         collapseWhitespace: true
       },
       inject: true
-    })
-  ]
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
+      __DEV__: true
+    }),
+    new webpack.NoErrorsPlugin()
+  ],
+  module: {
+    preLoaders: [
+      {test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/}
+    ]
+  }
 }
