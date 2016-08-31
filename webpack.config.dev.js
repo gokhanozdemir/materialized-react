@@ -1,5 +1,6 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 var path = require('path');
 
 module.exports = {
@@ -37,6 +38,10 @@ module.exports = {
     ],
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel'] },
+      { test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'] },
     ],
   },
+  postcss: function () {
+    return [autoprefixer];
+ }
 };
