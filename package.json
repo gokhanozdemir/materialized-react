@@ -1,0 +1,31 @@
+{
+  "name": "materialized-react",
+  "version": "0.1.0",
+  "description": "React-redux boilerplate with Babel, testing, coverage and example app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --config webpack.config.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barancezayirli/materialized-react.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "redux",
+    "boilerplate"
+  ],
+  "author": "Baran Cezayirli <barancezayirlioglu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barancezayirli/materialized-react/issues"
+  },
+  "homepage": "https://github.com/barancezayirli/materialized-react#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
+  }
+}
