@@ -1,3 +1,4 @@
+/* eslint-disable */
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');

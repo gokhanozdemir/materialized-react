@@ -1,6 +1,8 @@
+/* eslint-disable */
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
 var path = require('path');
 
 module.exports = {
@@ -31,6 +33,11 @@ module.exports = {
       __DEV__: true,
     }),
     new webpack.NoErrorsPlugin(),
+    // Launch browser
+    new WebpackBrowserPlugin({
+      port: 3000,
+      url: 'http://localhost'
+    })
   ],
   module: {
     preLoaders: [
