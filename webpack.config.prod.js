@@ -4,6 +4,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackMd5Hash = require('webpack-md5-hash');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require('path');
 
 module.exports = {
@@ -18,6 +19,12 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
+    // Remove build folders
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname),
+      verbose: true,
+      dry: false
+    }),
     // Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
 
