@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
+    "predeploy": "webpack --config webpack.config.github.js",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,6 +44,7 @@
     "eslint-plugin-react": "^6.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.11.0",
